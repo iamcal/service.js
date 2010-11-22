@@ -12,7 +12,7 @@ First, write a wrapper/preamble:
 
 	// your app goes here...
 
-The execute it:
+Then execute it:
 
 	./wrapper.js [start|stop|restart|status|simple]
 
