@@ -44,7 +44,7 @@ exports.run = function(run_args_a){
 			break;
 
 		default:
-			sys.puts('Usage: [start|stop|status|simple]');
+			sys.puts('Usage: [start|stop|restart|status|simple]');
 			process.exit(0);
 	}
 }
