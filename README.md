@@ -19,7 +19,7 @@ Then execute it:
 The first commands do what you would expect, running the app as a daemon.
 The <code>simple</code> command allows you to run the app in interactive mode for testing.
 
-In daemon mode, output sent furing startup will be echo'd to the console, while anything sent 
+In daemon mode, output sent during startup will be echo'd to the console, while anything sent 
 after the first timer/event will go to the log file.
 
 Unfortunately <code>chkconfig</code> requires extra comment lines at the top of the
