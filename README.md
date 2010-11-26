@@ -1,6 +1,10 @@
 This module allows you to turn your node app into a linux init.d daemon with a minimum of hassle.
 It requires <a href="https://github.com/indexzero/daemon.node">daemon.node</a>.
 
+If you have <a href="http://npmjs.org/">npm</a>, installation is just:
+
+	npm install service
+
 First, write a wrapper/preamble:
 
 	#!/usr/local/bin/node
