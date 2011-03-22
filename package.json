@@ -1,6 +1,6 @@
 {
 	"name"		: "service",
-	"version"	: "0.1.0",
+	"version"	: "0.1.1",
 	"description"	: "Make init.d scripts for node apps",
 	"homepage"	: "https://github.com/iamcal/service.js",
 	"main"		: "./service",
@@ -9,7 +9,7 @@
 		"url"	: "http://github.com/iamcal/service.js.git"
 	},
 	"dependencies"	: {
-		"daemon" : ">=0.1.0",
-	},
+		"daemon" : ">=0.1.0"
+	}
 }
 
