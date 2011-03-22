@@ -9,7 +9,7 @@
 		"url"	: "http://github.com/iamcal/service.js.git"
 	},
 	"dependencies"	: {
-		"daemon" : ">=0.1.0",
-	},
+		"daemon" : ">=0.1.0"
+	}
 }
 
