@@ -61,7 +61,7 @@ function start(){
 			sys.puts('Error starting daemon: ' + err);
 			process.exit(1);
 		}
-		daemon.daemonize(fd);
+		daemon.start(fd);
 		daemon.lock(run_args.lockFile);
 	});
 }
