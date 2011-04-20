@@ -8,6 +8,7 @@ If you have <a href="http://npmjs.org/">npm</a>, installation is just:
 First, write a wrapper/preamble:
 
 	#!/usr/local/bin/node
+	var util = require('util');
 
 	require('service').run({
 		lockFile: '/var/run/my_app.pid',
@@ -15,6 +16,13 @@ First, write a wrapper/preamble:
 	});
 
 	// your app goes here...
+	util.puts('This will be echo\'d to the console');
+	process.nextTick(function() {
+		util.puts('This will be echo\'d to the log file');
+		util.debug('This process is pid ' + process.pid);
+
+		// ...
+	});
 
 Then execute it:
 
