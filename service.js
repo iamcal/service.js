@@ -10,7 +10,7 @@ var daemon = require('daemon');
 var args = process.argv;
 var run_args;
 
-exports.run = function(run_args_a){
+exports.run = function(run_args_a) {
 
 	run_args = run_args_a;
 
@@ -56,13 +56,11 @@ function start() {
 		process.exit(0);
 	}
 
-	fs.open(run_args.logFile, 'w+', function (err, fd) {
+	daemon.daemonize(run_args.logFile, run_args.lockFile, function(err, pid) {
 		if (err) {
 			util.puts('Error starting daemon: ' + err);
 			process.exit(1);
 		}
-		daemon.start(fd);
-		daemon.lock(run_args.lockFile);
 	});
 }
 
@@ -80,7 +78,7 @@ function stop() {
 function getPid(filename) {
 	try {
 		return parseInt(fs.readFileSync(filename));
-	} catch (e) {
+	} catch(e) {
 		return 0;
 	}
 }
