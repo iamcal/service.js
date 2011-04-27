@@ -1,4 +1,4 @@
-var sys = require('sys');
+var util = require('util');
 var fs = require('fs');
 var daemon = require('daemon');
 
@@ -33,9 +33,9 @@ exports.run = function(run_args_a){
 		case "status":
 			var pid = getPid(run_args.lockFile);
 			if (pid){
-				sys.puts("Running, pid="+pid);
+				util.puts("Running, pid="+pid);
 			}else{
-				sys.puts("Not running");
+				util.puts("Not running");
 			}
 			process.exit(0);
 			break;
@@ -44,7 +44,7 @@ exports.run = function(run_args_a){
 			break;
 
 		default:
-			sys.puts('Usage: [start|stop|restart|status|simple]');
+			util.puts('Usage: [start|stop|restart|status|simple]');
 			process.exit(0);
 	}
 }
@@ -52,13 +52,13 @@ exports.run = function(run_args_a){
 function start(){
 	var pid = getPid(run_args.lockFile);
 	if (pid){
-		sys.puts('Already running');
+		util.puts('Already running');
 		process.exit(0);
 	}
 
 	fs.open(run_args.logFile, 'w+', function (err, fd){
 		if (err){
-			sys.puts('Error starting daemon: ' + err);
+			util.puts('Error starting daemon: ' + err);
 			process.exit(1);
 		}
 		daemon.start(fd);
@@ -71,9 +71,9 @@ function stop(){
 	if (pid){
 		process.kill(pid);
 		fs.unlinkSync(run_args.lockFile);
-		sys.puts('OK');
+		util.puts('OK');
 	}else{
-		sys.puts('Not running');
+		util.puts('Not running');
 	}
 }
 
